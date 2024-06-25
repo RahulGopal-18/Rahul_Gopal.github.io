@@ -10,8 +10,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("XltAFff7kCpopBttu");
+    })();
+  </script>
 
 </head>
 
@@ -22,15 +27,17 @@
     <!--==================== STYLE SWITCHER ====================-->
     <div class="style__switcher"></div>
 
-    <!--==================== HEADER ====================-->
-
+    <!--==================== Scroll Bar ====================-->
+    <div class="scroll-up-btn">
+      <i class="fas fa-angle-up"></i>
+    </div>
+    <!--==================== Menu bar ====================-->
     <nav class="navbar">
       <div class="max-width">
         <div class="logo"><a href="#">Rahul<span> Gopal</span></a></div>
         <ul class="menu">
           <li><a href="#home" class="menu-btn">Home</a></li>
-          <li><a href="#about" class="menu-btn">About</a></li>
-          <li><a href="#about" class="menu-btn">Skills</a></li>
+          <li><a href="#about" class="menu-btn">About Me</a></li>
           <li><a href="#portfolio" class="menu-btn">Portfolio</a></li>
           <li><a href="#contact" class="menu-btn">Contact</a></li>
         </ul>
@@ -48,7 +55,7 @@
           <div class="home__content">
             <div class="text-1">Hello, I am</div>
             <div class="text-2">Rahul Gopal</div>
-            <div class="text-3">And I'm a <span class="typing">Data Scientist</span></div>
+            <div class="text-3">And I'm a <span class="typing"></span></div>
             <p class="home__description">
 
               <a href="#about" class="btn btn-primary"> More about me </a>
@@ -73,7 +80,7 @@
               <div class="about__card">
                 <div class="lines"></div>
                 <div class="imgBx">
-                  <img src="static/images/profile_pic4.png" alt="">
+                  <img src="/static/images/profile_pic4.png" alt="">
                 </div>
                 <div class="content">
                   <div class="details">
@@ -104,14 +111,17 @@
             </div>
             <div class="about__content">
               <h2 class="about__section__title">WHO AM I?</h2>
-              <h2 class="about__section__subtitle"> And I'm a Rahul Gopal and I'm a <span class="typing">Data
-                  Scientist</span></h2>
+              <h2 class="about__section__subtitle"> And I'm a Rahul Gopal and I'm a <span class="typing-2"></span></h2>
               <p class="home__description">
 
-                I am a Data Scientist with a passion for transforming raw data into actionable insights and driving
-                data-driven decision-making. With a strong background in statistics, machine learning, and data
-                analysis,
-                I specialize in building predictive models and creating impactful data solutions.
+                A graduate of IIITDM with a Bachelor's degree in Engineering. I began my career at Capgemini, where I
+                worked as a Senior Analyst.
+                My experience there allowed me to develop a solid foundation in understanding business processes and
+                working in dynamic team environments.
+                My interest in Data Science and Analytics drives my ambition to explore new methodologies and
+                technologies in this evolving field.
+
+
               </p>
               <div class="tabs">
                 <button class="tab-link active" onclick="openTab(event, 'main-skills')">Skills</button>
@@ -144,7 +154,7 @@
                       <p><b>Data Manipulation:</b> Pandas, NumPy</p>
                       <p><b>Data Visualization:</b> Matplotlib, Seaborn, Tableau, Power BI </p>
                       <p><b>Machine Learning::</b> Scikit-Learn, TensorFlow, Keras</p>
-                      <p><b>Web Development:</b> HTML, CSS,Flask </p>
+                      <p><b>Web Development:</b> HTML, CSS, Flask </p>
                       <p><b>Database Management:</b> SQL, MySQL</p>
                     </div>
                     <div id="analytical-skills" class="tab-content">
@@ -156,16 +166,23 @@
                         Analysis, Bayesian Statistics </p>
                     </div>
                     <div id="soft-skills" class="tab-content">
-                      <h3>Soft Skills</h3>
-                      <p>List your soft skills here.</p>
+                      <p><b>Problem Solving</b></p>
+                      <p><b>Adaptability</b></p>
+                      <p><b>Leadership</b></p>
+                      <p><b>Time management</b></p>
+                      <p><b>Critical thinking</b></p>
+                      <p><b>Creativity</b></p>
                     </div>
                     <div id="project-management-skills" class="tab-content">
-                      <h3>Project Management Skills</h3>
-                      <p>List your project management skills here.</p>
+                      <p><b>Agile Methodologies:</b>Scrum, Kanban</p>
+                      <p><b>Six Sigma:</b>DMAIC Process,Quality Tools and others </p>
+                      <p><b>Lean :</b>Value Stream Mapping,Continuous Improvement (Kaizen),
+                         5S Organization, Lean Metrics and others</p>
                     </div>
                     <div id="tools-software" class="tab-content">
                       <h3>Tools and Software</h3>
-                      <p>List the tools and software you are proficient in here.</p>
+                      <p><b>IDE:</b> Jupyter Notebook, PyCharm, VS Code</p>
+                      <p><b>BI Tools:</b> Tableau, Power BI</p>
                     </div>
                   </div>
                 </div>
@@ -217,7 +234,7 @@
                 <div class="job">
                   <div class="job-title">Senior Analyst</div>
                   <div class="company">
-                    <img src="/static/images/capgemini.png" alt="Capgemini Logo">
+                    <img src="static/images/capgemini.png" alt="Capgemini Logo">
                     Capgemini · Full-time
                   </div>
                   <div class="duration">Aug 2022 - Dec 2023 · 1 yr 5 mos</div>
@@ -233,21 +250,20 @@
                     applications using
                     REST API, and SOAP Service.
                   </div>
-                  <div class="skills"><i class="icon">✓</i> ServiceNow and ITIL</div>
                 </div>
               </div>
               <!--==================== certification====================-->
               <div id="certification" class="tab-content">
                 <div class="certification">
                   <div class="certificate">
-                    <img src="/static/images/certification1.png" alt="Microsoft Logo">
+                    <img src="static/images/certification1.png" alt="Microsoft Logo">
                     <h3>Azure AI Fundamentals</h3>
                     <p>Microsoft</p>
                     <p>Issued Jan 2023 &middot; Expires Jan 2025</p>
                     <p class="credential-id">Credential ID 1586-8988</p>
                   </div>
                   <div class="certificate">
-                    <img src="/static/images/certification2.png" alt="Microsoft Logo">
+                    <img src="static/images/certification2.png" alt="Microsoft Logo">
                     <h3>IBM Applied AI</h3>
                     <p>Coursera</p>
                     <p>Issued May 2023 </p>
@@ -256,14 +272,14 @@
                 </div>
                 <div class="certification">
                   <div class="certificate">
-                    <img src="/static/images/certification2.png" alt="Microsoft Logo">
+                    <img src="static/images/certification2.png" alt="Microsoft Logo">
                     <h3>IBM Data Science</h3>
                     <p>Microsoft</p>
                     <p>Issued Nov 2023 </p>
                     <a>Certificate link</a>
                   </div>
                   <div class="certificate">
-                    <img src="/static/images/certification3.png" alt="Microsoft Logo">
+                    <img src="static/images/certification3.png" alt="Microsoft Logo">
                     <h3>Data analytics with python</h3>
                     <p>NPTEL</p>
                     <p>Issued Apr 2022</p>
@@ -271,7 +287,7 @@
                   </div>
                 </div>
                 <div class="certificate">
-                  <img src="/static/images/certification2.png" alt="Microsoft Logo">
+                  <img src="static/images/certification2.png" alt="Microsoft Logo">
                   <h3>Neural Networks and Deep Learning</h3>
                   <p>Coursera</p>
                   <p>Issued Oct 2021 </p>
@@ -280,7 +296,7 @@
 
               </div>
               <!--==================== CV and  soicals====================-->
-              <a href="/static/documents/CV.pdf" class="btn btn-primary" download>Download CV</a>
+              <a href="static/documents/CV.pdf" class="btn btn-primary" download>Download CV</a>
               <div class="about__socials">
                 <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -303,55 +319,74 @@
         <div class="portfolio-container">
           <header class="portfolio_header">
             <h1 class="portfolio_header_main">My Portfolio</h1>
-            <h2 class="portfolio_header_secendary">Recent Works</h2>
+            <h2 class="portfolio_header_secondary">Recent Works</h2>
           </header>
 
           <nav class="filter-nav">
             <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="Data">Data Science</button>
+            <button class="filter-btn" data-filter="data">Data Science</button>
             <button class="filter-btn" data-filter="web">Web</button>
             <button class="filter-btn" data-filter="robotics">Robotics</button>
           </nav>
 
-          <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="Data">
-              <div class="item-content">
-                <img src="static/images/portfolio1.jpeg" alt="Data Science">
-                <h3>Data Science</h3>
-                <a href="#" class="demo-link" data-title="Data Science" data-date="4 Dec 2020" data-tech="HTML, CSS"
-                  data-role="Frontend" data-link="http://www.domain.com" data-modal-image="static/images/portfolio1.jpeg">Details
-                  &rarr;</a>
+          <div class="slider-wrapper">
+            <button class="prev-btn">&#x25C0;</button>
+            <div class="portfolio-slider">
+              <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="data">
+                  <div class="item-content">
+                    <img src="static/images/portfolio1.jpeg"
+                      alt="Identify Arsenal Stars: Upload, Predict, and Highlight!">
+                    <h3>Identify Arsenal Stars: Upload, Predict, and Highlight!</h3>
+                    <a href="#" class="demo-link" data-title="Identify Arsenal Stars: Upload, Predict, and Highlight!" data-date="4 Dec 2020"
+                      data-tech="Machine Learning · Python" data-link="Watch this space! New website launching shortly."
+                      data-modal-image="static/images/portfolio1.jpeg" data-description="Data was collected using web scraping to collect data, then data was cleaned
+                      using opencv face detection, and feature engineering was performed using wavelet transforms. The model
+                      was built using SVM. Finally, the Model was fine-tuned using GridSearchCV.">Details &rarr;</a>
+                  </div>
+                </div>
+                <div class="portfolio-item" data-category="data">
+                  <div class="item-content">
+                    <img src="static/images/portfolio2.jpeg" alt="Web Design">
+                    <h3>Data analysis and visualization of SpaceX launching</h3>
+                    <a href="#" class="demo-link" data-title="Data analysis and visualization of SpaceX launching" data-date="4 Dec 2020"
+                      data-tech="Data Analysis · Machine Learning · Python" data-role="Frontend"
+                      data-link="Stay tuned for our new website—coming soon!"
+                      data-modal-image="static/images/portfolio2.jpeg" data-description="Data was collected using web scraping to collect data, then data was cleaned using 
+                      opencv face detection, and feature engineering was performed using wavelet transforms. The model was
+                       built using SVM. Finally, the Model was fine-tuned using GridSearchCV.">Details &rarr;</a>
+                  </div>
+                </div>
+                <div class="portfolio-item" data-category="robotics">
+                  <div class="item-content">
+                    <img src="static/images/portfolio3.jpeg" alt="Web Design">
+                    <h3>Bio-inspired compliant gripper</h3>
+                    <a href="#" class="demo-link" data-title="Bio-inspired compliant gripper" data-date="May 2022"
+                      data-tech="SofidWorks, Ansys" data-role="Frontend" data-link="Site in progress—coming soon!"
+                      data-modal-image="static/images/portfolio3.jpeg" data-description="In this project, a gripper was designed for handling soft objects using a compliant
+                       slider crank mechanism. Two types of grippers with a single moving part and two moving parts based on
+                        the mechanism of the crab were designed. The gripper was fabricated using a 3D Printer. The material 
+                        of the gripper is PLA. The fabricated gripper was tested to hold various objects like tomatoes, toys, 
+                        plastic bottles, etc.">Details &rarr;</a>
+                  </div>
+                </div>
+                <div class="portfolio-item" data-category="robotics">
+                  <div class="item-content">
+                    <img src="static/images/portfolio4.jpeg" alt="Web Design">
+                    <h3>Detection and picking of metal object within system</h3>
+                    <a href="#" class="demo-link" data-title="Detection and picking of metal object within system" data-date="Jan 2020"
+                      data-tech="Arduino, MathLab" data-role="Frontend"
+                      data-link="Coming soon! Our website is getting a makeover"
+                      data-modal-image="static/images/portfolio4.jpeg" data-description=" The objective of the project is to detect objects placed within the system, pick the object, and place 
+                      it at the specified location. The pick and place robotic arm is a controller-based mechatronic system that detects the object,
+                       picks that objectfrom the source location, and places it at the desired location. Knowledge gained/applied: Image Processing, Arduino,
+                      MATLAB.">Details &rarr;</a>
+                  </div>
+                </div>
+                
               </div>
             </div>
-            <div class="portfolio-item" data-category="web">
-              <div class="item-content">
-                <img src="static/images/portfolio2.jpeg" alt="Web Design">
-                <h3>Web Design</h3>
-                <a href="#" class="demo-link" data-title="Web Design" data-date="4 Dec 2020" data-tech="HTML, CSS"
-                  data-role="Frontend" data-link="http://www.domain.com" data-modal-image="static/images/portfolio2.jpeg">Details
-                  &rarr;</a>
-              </div>
-            </div>
-            <div class="portfolio-item" data-category="web">
-              <div class="item-content">
-                <img src="/static/images/portfolio3.jpeg" alt="Web Design">
-                <h3>Web Design</h3>
-                <a href="#" class="demo-link" data-title="Web Design" data-date="4 Dec 2020" data-tech="HTML, CSS"
-                  data-role="Frontend" data-link="http://www.domain.com" data-modal-image="/static/images/portfolio3.jpeg">Details
-                  &rarr;</a>
-              </div>
-            </div>
-            <div class="portfolio-item" data-category="web">
-              <div class="item-content">
-                <img src="/static/images/portfolio4.jpeg" alt="Web Design">
-                <h3>Web Design</h3>
-                <a href="#" class="demo-link" data-title="Web Design" data-date="4 Dec 2020" data-tech="HTML, CSS"
-                  data-role="Frontend" data-link="http://www.domain.com" data-modal-image="/static/images/portfolio4.jpeg">Details
-                  &rarr;</a>
-              </div>
-            </div>
-            
-            </div>
+            <button class="next-btn">&#x25B6;</button>
           </div>
 
           <!-- Modal Structure -->
@@ -361,82 +396,94 @@
               <img id="modalImage" src="" alt="Portfolio Image">
               <div class="modal-text-content">
                 <h2 id="modalTitle"></h2>
-                <p id="modalDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Earum impedit
-                  voluptatibus minima.</p>
+                <p><span id="modalDescription"></span></p>
                 <p><strong>Created:</strong> <span id="modalDate"></span></p>
-                <p><strong>Technologies:</strong> <span id="modalTech"></span></p>
-                <p><strong>Role:</strong> <span id="modalRole"></span></p>
+                <p><strong>Technologies Used:</strong> <span id="modalTech"></span></p>
                 <p><strong>View:</strong> <a id="modalLink" href="#" target="_blank"></a></p>
               </div>
             </div>
           </div>
-
+        </div>
       </section>
 
 
       <!--==================== CONTACT ====================-->
-          <!-- contact section start -->
-          <section class="contact" id="contact">
-            <div class="max-width">
-                <h2 class="title">Contact me</h2>
-                <div class="contact-content">
-                    <div class="column left">
-                        <div class="text">Get in Touch</div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p>
-                        <div class="icons">
-                            <div class="row">
-                                <i class="fas fa-user"></i>
-                                <div class="info">
-                                    <div class="head">Name</div>
-                                    <div class="sub-title">Prakash Shahi</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="info">
-                                    <div class="head">Address</div>
-                                    <div class="sub-title">Surkhet, Nepal</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <i class="fas fa-envelope"></i>
-                                <div class="info">
-                                    <div class="head">Email</div>
-                                    <div class="sub-title">abc@gmail.com</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column right">
-                        <div class="text">Message me</div>
-                        <form id="contactForm" action="#">
-                            <div class="fields">
-                                <div class="field name">
-                                    <input type="text" id="name" placeholder="Name" required>
-                                </div>
-                                <div class="field email">
-                                    <input type="email" id="email" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <input type="text" id="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="field textarea">
-                                <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
-                            </div>
-                            <div class="button-area">
-                                <button type="submit">Send message</button>
-                            </div>
-                        </form>
-                    </div>
+      <!-- contact section start -->
+      <section class="contact" id="contact">
+        <div class="max-width">
+          <h2 class="title">Contact me</h2>
+          <div class="contact-content">
+            <div class="column left">
+              <div class="text">Get in Touch</div>
+              <p>I’m thrilled to connect with you! Whether you have a project idea, collaboration proposal, or just want
+                to chat, feel free to drop me a line using the form below. I look forward to hearing from you!</p>
+              <div class="icons">
+                <div class="row">
+                  <div class="contact_icon">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div class="info">
+                    <div class="head">Name</div>
+                    <div class="sub-title">Rahul Gopal</div>
+                  </div>
                 </div>
+                <div class="row">
+                  <div class="contact_icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="info">
+                    <div class="head">Address</div>
+                    <div class="sub-title">Chennai, India</div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="contact_icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="info">
+                    <div class="head">Email</div>
+                    <div class="sub-title">rahulgopal2k@gmail.com</div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-        
+            <div class="column right">
+              <div class="text">Message me</div>
+              <form id="contactForm" action="#">
+                <div class="fields">
+                  <div class="field name">
+                    <input type="text" id="name" placeholder="Name" required>
+                  </div>
+                  <div class="field email">
+                    <input type="email" id="email" placeholder="Email" required>
+                  </div>
+                </div>
+                <div class="field">
+                  <input type="text" id="subject" placeholder="Subject" required>
+                </div>
+                <div class="field textarea">
+                  <textarea id="message" cols="30" rows="10" placeholder="Message.." required></textarea>
+                </div>
+                <div class="button-area">
+                  <button type="submit">Send message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer>
+      <span>By <a>Rahul Gopal</a> 
+        <div class="about__socials">
+          <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
 
     <script src="static/js/scripts.js"></script>
   </body>
