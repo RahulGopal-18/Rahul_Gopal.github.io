@@ -264,6 +264,28 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', updateSlider);
   updateSlider();
 });
+demoLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const title = link.getAttribute('data-title');
+            const date = link.getAttribute('data-date');
+            const tech = link.getAttribute('data-tech');
+            const role = link.getAttribute('data-role');
+            const url = link.getAttribute('data-link');
+            const image = link.getAttribute('data-modal-image');
+
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDate').textContent = date;
+            document.getElementById('modalTech').textContent = tech;
+            document.getElementById('modalRole').textContent = role;
+            document.getElementById('modalLink').textContent = url;
+            document.getElementById('modalLink').href = url;
+            document.getElementById('modalImage').src = image;
+
+            modal.style.display = 'block';
+        });
+    });
 
 /* Contact Form */
 document.getElementById("contactForm").addEventListener("submit", function(event){
