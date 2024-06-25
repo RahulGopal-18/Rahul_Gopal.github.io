@@ -35,14 +35,14 @@ $(document).ready(function () {
 
   // typing text animation script
   var typed = new Typed(".typing", {
-    strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+    strings: ["Data Analyst", "Data Scientist", "Machine Learning Engineer", "Data visualization engineers"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true,
   });
 
   var typed = new Typed(".typing-2", {
-    strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+    strings: ["Data Analyst", "Data Scientist", "Machine Learning Engineer", "Data visualization engineers"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true,
@@ -169,20 +169,79 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize vertical tabs
   resetVerticalTabs();
 });
-document.addEventListener('DOMContentLoaded', function() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const portfolioItems = document.querySelectorAll('.portfolio-item');
-  const demoLinks = document.querySelectorAll('.demo-link');
-  const modal = document.getElementById('portfolioModal');
-  const closeModal = document.querySelector('.close');
 
+/* For Portfoilio */
+document.addEventListener('DOMContentLoaded', function() {
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const portfolioGrid = document.querySelector('.portfolio-grid');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  let itemsPerView;
+  let currentSlide = 0;
+
+  function calculateItemsPerView() {
+      const viewportWidth = window.innerWidth;
+
+      if (viewportWidth < 690) {
+          itemsPerView = 1;
+      } else if (viewportWidth < 950) {
+          itemsPerView = 2;
+      } else {
+          itemsPerView = 3;
+      }
+  }
+
+  function calculateTotalSlides() {
+      return Math.ceil(portfolioItems.length / itemsPerView);
+  }
+
+  function showSlide(index) {
+      const itemWidth = portfolioItems[0].offsetWidth + 20; // Including margin
+      const offset = -index * itemWidth * itemsPerView;
+      portfolioGrid.style.transform = `translateX(${offset}px)`;
+  }
+
+  function nextSlide() {
+      const totalSlides = calculateTotalSlides();
+      if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+      } else {
+          currentSlide = 0;
+      }
+      showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+      const totalSlides = calculateTotalSlides();
+      if (currentSlide > 0) {
+          currentSlide--;
+      } else {
+          currentSlide = totalSlides - 1;
+      }
+      showSlide(currentSlide);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  let autoSlideInterval = setInterval(nextSlide, 5000);
+
+  sliderWrapper.addEventListener('mouseenter', () => {
+      clearInterval(autoSlideInterval);
+  });
+
+  sliderWrapper.addEventListener('mouseleave', () => {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+  });
+
+  // Filter functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
   filterButtons.forEach(button => {
       button.addEventListener('click', function() {
           filterButtons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
-          
           const filter = button.getAttribute('data-filter');
-
           portfolioItems.forEach(item => {
               if (filter === 'all' || item.getAttribute('data-category') === filter) {
                   item.style.display = 'block';
@@ -190,39 +249,54 @@ document.addEventListener('DOMContentLoaded', function() {
                   item.style.display = 'none';
               }
           });
+          currentSlide = 0;
+          showSlide(currentSlide);
       });
   });
 
-  demoLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
+  // Initial setup
+  function updateSlider() {
+      calculateItemsPerView();
+      showSlide(currentSlide);
+  }
 
-      const title = link.getAttribute('data-title');
-      const date = link.getAttribute('data-date');
-      const tech = link.getAttribute('data-tech');
-      const role = link.getAttribute('data-role');
-      const url = link.getAttribute('data-link');
-      const image = link.getAttribute('data-modal-image');  // Use modal image
+  // Update slider on resize
+  window.addEventListener('resize', updateSlider);
+  updateSlider();
+});
 
-      document.getElementById('modalTitle').textContent = title;
-      document.getElementById('modalDate').textContent = date;
-      document.getElementById('modalTech').textContent = tech;
-      document.getElementById('modalRole').textContent = role;
-      document.getElementById('modalLink').textContent = url;
-      document.getElementById('modalLink').href = url;
-      document.getElementById('modalImage').src = image;  // Set modal image source
+/* Contact Form */
+document.getElementById("contactForm").addEventListener("submit", function(event){
+  event.preventDefault();
 
-      modal.style.display = 'block';
-    });
-  });
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var subject = document.getElementById("subject").value;
+  var message = document.getElementById("message").value;
 
-  closeModal.addEventListener('click', function() {
-    modal.style.display = 'none';
-  });
+  if(name === "" || email === "" || subject === "" || message === "") {
+      alert("Please fill all the fields.");
+      return;
+  }
 
-  window.addEventListener('click', function(event) {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
+  var params = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+  };
+
+  const serviceID = "service_a0s2ifs";
+  const templateID = "template_ah7zg2p";
+
+  emailjs.send(serviceID, templateID, params)
+  .then(res => {
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("subject").value = "";
+      document.getElementById("message").value = "";
+      console.log(res);
+      alert("Your message sent successfully!!");
+  })
+  .catch(err => console.log(err));
 });
