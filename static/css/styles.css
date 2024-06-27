@@ -8,14 +8,12 @@
 
   /*========== Colors ==========*/
   /* Color mode HSL(hue, saturation, lightness) */
-  --first-color: hsl(210, 77%, 58%);
-  --first-color-dark: hsl(210, 78%, 51%);
-  --first-color-light: hsl(210, 100%, 83%);
-  
-  --second-color: hsl(210, 77%, 68%);
-  --third-color: hsl(210, 77%, 78%);
-  --title-color: hsl(210, 0%, 87%);
-  
+  --first-color: hsl(268, 77%, 58%);
+  --first-color-dark: hsl(268, 78%, 51%);
+  --first-color-light: hsl(268, 100%, 83%);
+  --second-color: hsl(268, 77%, 68%);
+  --third-color: hsl(268, 77%, 78%);
+  --title-color: hsl(0, 0%, 87%);
   --text-color: hsl(0, 0%, 69%);
   --body-color: hsl(200, 12%, 5%);
   --container-color: hsl(200, 10%, 8%);
@@ -31,13 +29,10 @@
   --about_card_bg_2: #222;
 
   /*Timeline*/
-  --timeline-color-1: hsl(280, 77%, 58%);/* Bright blue */
-  --timeline-color-2: hsl(330, 77%, 58%); /* Pink (similar to the violet you provided earlier) */
-  --timeline-color-3: hsl(60, 77%, 58%); /* Yellow (complementary to blue) */
+  --timeline-color-1: #f27121;
+  --timeline-color-2: #e94057;
+  --timeline-color-3: #8a2387;
 
-  
-  
-  
   /*========== Font and typography ==========*/
   /* .5rem = 8px | 1rem = 16px ... */
   --body-font: "Jost", sans-serif;
@@ -577,7 +572,6 @@ section {
   font-size: 1em;
   margin-bottom: 20px;
   line-height: 1.6;
-  text-align: left;
 }
 
 .about__info p {
@@ -783,7 +777,6 @@ section {
 
 .job .job-description {
   margin-bottom: 20px;
-  text-align: left;
 }
 
 .job .skills {
